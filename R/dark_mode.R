@@ -33,7 +33,10 @@ dark_mode <- function(.theme = theme_get(), verbose = TRUE, force_geom_invert = 
   # defaults, otherwise leave the geoms alone. Use force_geom_invert to invert the geom When the geom point color is not black but
   # the geom defaults force_geom_invert.
   geoms <- get_geoms()
-  geoms_are_dark <- geoms[["GeomPoint"]]$default_aes$colour %in% c("black", "#000000")
+  geoms_are_dark <- {
+    col <- geoms[["GeomPoint"]]$default_aes$colour
+    is.character(col) && col %in% c("black", "#000000")
+  })
   if (geoms_are_dark || force_geom_invert) {
     invert_geom_defaults(geoms)
     if (verbose) {

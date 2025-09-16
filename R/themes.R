@@ -99,25 +99,52 @@ NULL
 #' @importFrom ggplot2 theme_bw
 #' @export
 #' @rdname ggdarktheme
-dark_theme_bw <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                          base_rect_size = base_size/22) {
-  dark_mode(theme_bw(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_bw <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_bw(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_classic
 #' @export
 #' @rdname ggdarktheme
-dark_theme_classic <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                               base_rect_size = base_size/22) {
-  dark_mode(theme_classic(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_classic <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_classic(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_gray
 #' @export
 #' @rdname ggdarktheme
-dark_theme_gray <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                            base_rect_size = base_size/22) {
-  dark_mode(theme_gray(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_gray <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_gray(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @export
@@ -127,47 +154,101 @@ dark_theme_grey <- dark_theme_gray
 #' @importFrom ggplot2 theme_minimal
 #' @export
 #' @rdname ggdarktheme
-dark_theme_minimal <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                               base_rect_size = base_size/22) {
-  dark_mode(theme_minimal(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_minimal <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_minimal(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_light
 #' @export
 #' @rdname ggdarktheme
-dark_theme_light <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                             base_rect_size = base_size/22) {
-  dark_mode(theme_light(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_light <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_light(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_dark
 #' @export
 #' @rdname ggdarktheme
-dark_theme_dark <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                            base_rect_size = base_size/22) {
-  dark_mode(theme_dark(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_dark <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_dark(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_void
 #' @export
 #' @rdname ggdarktheme
-dark_theme_void <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                            base_rect_size = base_size/22) {
-  dark_mode(theme_void(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_void <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_void(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_test
 #' @export
 #' @rdname ggdarktheme
-dark_theme_test <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                            base_rect_size = base_size/22) {
-  dark_mode(theme_test(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_test <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_test(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
 
 #' @importFrom ggplot2 theme_linedraw
 #' @export
 #' @rdname ggdarktheme
-dark_theme_linedraw <- function(base_size = 11, base_family = "", base_line_size = base_size/22,
-                                base_rect_size = base_size/22) {
-  dark_mode(theme_linedraw(base_size, base_family, base_line_size, base_rect_size))
+dark_theme_linedraw <- function(
+  base_size = 11,
+  base_family = "",
+  base_line_size = base_size / 22,
+  base_rect_size = base_size / 22
+) {
+  dark_mode(theme_linedraw(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  ))
 }
