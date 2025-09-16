@@ -26,7 +26,11 @@
 #'
 #' invert_geom_defaults()  # restore geom defaults to their original values
 #' @rdname dark_mode
-dark_mode <- function(.theme = theme_get(), verbose = TRUE, force_geom_invert = FALSE) {
+dark_mode <- function(
+  .theme = theme_get(),
+  verbose = TRUE,
+  force_geom_invert = FALSE
+) {
   stopifnot(is.theme(.theme))
 
   # Detect whether the default value of geom point colour is black. If so, invert all geom
@@ -36,17 +40,22 @@ dark_mode <- function(.theme = theme_get(), verbose = TRUE, force_geom_invert = 
   geoms_are_dark <- {
     col <- geoms[["GeomPoint"]]$default_aes$colour
     is.character(col) && col %in% c("black", "#000000")
-  })
+  }
   if (geoms_are_dark || force_geom_invert) {
     invert_geom_defaults(geoms)
     if (verbose) {
-      message("Inverted geom defaults of fill and color/colour.\n",
-              "To change them back, use invert_geom_defaults().")
+      message(
+        "Inverted geom defaults of fill and color/colour.\n",
+        "To change them back, use invert_geom_defaults()."
+      )
     }
   }
 
   .theme <- invert_theme_elements(.theme)
-  if (inherits(.theme$plot.background, "element_blank") | is.null(.theme$plot.background)) {
+  if (
+    inherits(.theme$plot.background, "element_blank") |
+      is.null(.theme$plot.background)
+  ) {
     # For a few themes, like theme_minimal() and theme_void() from 'ggplot2', the background
     # is blank or NULL and displays as white, so fill the plot background with black.
     .theme <- .theme + theme(plot.background = element_rect(fill = "#000000"))
@@ -70,7 +79,8 @@ invert_theme_elements <- function(.theme) {
   element_names <- names(.theme)
   for (element_name in element_names) {
     element <- .theme[[element_name]]
-    if (inherits(element, "element")) {  # element_line, element_rect, element_text, element_blank
+    if (inherits(element, "element")) {
+      # element_line, element_rect, element_text, element_blank
       if (!is.null(element$colour)) {
         .theme[[element_name]]$colour <- invert_color(element$colour)
       }
@@ -130,7 +140,11 @@ get_geoms <- function() {
   geoms <- list()
   namespaces <- loadedNamespaces()
   for (namespace in namespaces) {
-    geoms_in_namespace <- mget(geom_names, envir = asNamespace(namespace), ifnotfound = list(NULL))
+    geoms_in_namespace <- mget(
+      geom_names,
+      envir = asNamespace(namespace),
+      ifnotfound = list(NULL)
+    )
     for (geom_name in geom_names) {
       if (is.ggproto(geoms_in_namespace[[geom_name]])) {
         geoms[[geom_name]] <- geoms_in_namespace[[geom_name]]
@@ -164,7 +178,12 @@ get_geoms <- function() {
 #' @rdname invert_color
 invert_color <- function(color, colour = color) {
   inv_rgb <- abs(255 - col2rgb(colour))
-  inv_color <- rgb(inv_rgb[1, ], inv_rgb[2, ], inv_rgb[3, ], maxColorValue = 255)
+  inv_color <- rgb(
+    inv_rgb[1, ],
+    inv_rgb[2, ],
+    inv_rgb[3, ],
+    maxColorValue = 255
+  )
   inv_color[is.na(colour)] <- NA
   inv_color[is.null(colour)] <- NULL
   inv_color
